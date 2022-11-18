@@ -1,23 +1,19 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { ChangeEvent } from "react";
-import { storeFiles } from "../utils/store";
+import React from "react";
+import type { ReactElement } from "react";
+import type { NextPageWithLayout } from "./_app";
+import DashLayout from "../components/layouts/DashLayout";
+import CardsArea from "../components/Dashboard/CardsArea/CardsArea";
 
-const Home: NextPage = () => {
-  const storeToFil = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.files);
-    if (e.target.files) storeFiles(Array.from(e.target.files));
-  };
-
+const Home: NextPageWithLayout = () => {
   return (
-    <div className=" min-h-screen grid place-items-center py-2 bg-offWhite">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="bg-offWhite flex-1">
+      <CardsArea />
     </div>
   );
+};
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <DashLayout>{page}</DashLayout>;
 };
 
 export default Home;

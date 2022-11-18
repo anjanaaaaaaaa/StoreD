@@ -8,7 +8,7 @@ interface ISidebarStripProps {
   onClick?: () => void;
 }
 
-const SidebarStrip = ({ icon, active, onClick }: ISidebarStripProps) => {
+const SidebarStrip = ({ title, icon, active, onClick }: ISidebarStripProps) => {
   return (
     <div
       className={`flex ${
@@ -19,7 +19,7 @@ const SidebarStrip = ({ icon, active, onClick }: ISidebarStripProps) => {
       onClick={() => onClick?.()}
     >
       <div className="mr-6 flex items-center">{SidebarIcons[icon]}</div>
-      <div className="flex items-center">Help & Support</div>
+      <div className="flex items-center">{title}</div>
     </div>
   );
 };
