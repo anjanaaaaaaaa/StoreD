@@ -1,11 +1,5 @@
-import { Web3Storage } from "web3.storage";
-function makeStorageClient() {
-  return new Web3Storage({ token: getAccessToken() as string });
-}
-function getAccessToken() {
-  // eslint-disable-next-line turbo/no-undeclared-env-vars
-  return process.env.NEXT_PUBLIC_WEB3STORAGE_TOKEN;
-}
+import { retrieveFiles } from "./retrieve";
+import { makeStorageClient } from "./web3storageclient";
 export function makeFileObjects(fileContent: string, file: string) {
   const files = [new File([fileContent], file)];
   return files;
@@ -26,6 +20,7 @@ export async function storeFiles(files: Array<File>) {
 
     const cid = await client.put(files, { onStoredChunk });
     console.log(cid);
+    console.log(retrieveFiles(cid));
     return cid;
   } catch (error) {
     console.log({ error });

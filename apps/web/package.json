@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ayanworks/polygon-did-registrar": "^0.0.15",
     "dotenv": "^16.0.3",
     "next": "latest",
     "react": "18.2.0",
