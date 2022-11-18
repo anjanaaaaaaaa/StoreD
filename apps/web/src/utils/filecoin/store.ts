@@ -20,7 +20,7 @@ export async function storeFiles(files: Array<File>) {
 
     const cid = await client.put(files, { onStoredChunk });
     console.log(cid);
-    console.log(retrieveFiles(cid));
+    // console.log(retrieveFiles(cid));
     return cid;
   } catch (error) {
     console.log({ error });

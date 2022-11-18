@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import CardIcons from "./CardIcons";
 
-const Card = () => {
+const Card = ({ file }: any) => {
   return (
     <div className="bg-white rounded-3xl  w-1/5">
       <div className="flex p-6">
@@ -11,12 +11,12 @@ const Card = () => {
       </div>
 
       <div className="p-6 mt-16">
-        <div className="font-bold">UI / UX Design</div>
-        <div className="text-slate-500 text-sm">23 Sept, 2022</div>
+        <div className="font-bold">{file.name}</div>
+        <div className="text-slate-500 text-sm break-words	mt-4">{file.cid}</div>
       </div>
 
       <div className="bg-offWhiteDarker rounded-b-2xl p-6 flex items-center justify-between">
-        <div>21.5 Mb</div>
+        <div>{file.size} bytes</div>
         <div>
           <Image
             src="https://avatars.githubusercontent.com/u/34763983?v=4"

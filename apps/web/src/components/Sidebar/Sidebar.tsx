@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import useSidebarStore from "../../zustand";
 import SidebarIcons from "./SidebarIcons";
 import SidebarStrip from "./SidebarStrip";
 
 const Sidebar = () => {
-  const [activeTab, setActiveTab] = useState("myCloud");
-
+  const activeTab = useSidebarStore((state) => state.activeSidebar);
+  const setActiveTab = useSidebarStore((state) => state.setActiveSidebar);
   const menus = [
     {
       icon: "myCloud",
@@ -13,7 +14,7 @@ const Sidebar = () => {
     },
     {
       icon: "shared",
-      label: "Shared",
+      label: "Upload",
       link: "/cloud",
     },
     {
@@ -31,7 +32,7 @@ const Sidebar = () => {
   return (
     <div className="h-screen bg-mattBlack text-white text-sm w-1/6 p-4 flex flex-col font-medium">
       <div className="text-white text-4xl mt-2 mb-48 mx-4 font-semibold">
-        Logo
+        StoreD
       </div>
       <div className="flex flex-col gap-4 flex-1">
         {menus.map((menu) => (

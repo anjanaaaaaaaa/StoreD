@@ -29,6 +29,7 @@ importers:
       typescript: 4.8.4
       wagmi: ^0.8.5
       web3.storage: ^4.4.0
+      zustand: ^4.1.4
     dependencies:
       '@rainbow-me/rainbowkit': 0.8.0_r3egxrsnif46mbpkh7ncgq54ja
       dotenv: 16.0.3
@@ -38,6 +39,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       wagmi: 0.8.5_ir5rj4sfbt34e63yhlgyn6mx7a
       web3.storage: 4.4.0_typescript@4.8.4
+      zustand: 4.1.4_react@18.2.0
     devDependencies:
       '@types/node': 18.11.3
       '@types/react': 18.0.21
