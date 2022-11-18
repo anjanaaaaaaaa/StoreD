@@ -17,7 +17,7 @@ import { publicProvider } from "wagmi/providers/public";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+  [chain.polygon],
   [
     // eslint-disable-next-line turbo/no-undeclared-env-vars
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY || "" }),
