@@ -43,7 +43,7 @@ const DashLayout: React.FC<{ children: ReactElement }> = ({ children }) => {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
         <div className="flex">
-          {/* <div
+          <div
             className={`absolute ${
               isConnected ? "-translate-y-full" : ""
             } bg-black/90 h-screen w-full z-10 backdrop-blur-xl grid place-items-center	transition duration-500`}
@@ -63,7 +63,7 @@ const DashLayout: React.FC<{ children: ReactElement }> = ({ children }) => {
                 <ConnectButton />
               </div>
             </div>
-          </div> */}
+          </div>
 
           <Sidebar />
           <main className="relative h-screen  overflow-auto w-full flex flex-col">
