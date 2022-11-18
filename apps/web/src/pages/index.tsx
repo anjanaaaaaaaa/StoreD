@@ -9,14 +9,13 @@ const Home: NextPage = () => {
     console.log(e.target.files);
     if (e.target.files) storeFiles(Array.from(e.target.files));
   };
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 bg-gray-500">
+    <div className=" min-h-screen grid place-items-center py-2 bg-offWhite">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <input type="file" onChange={storeToFil} />
     </div>
   );
 };
